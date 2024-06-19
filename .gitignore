@@ -1,0 +1,20 @@
+# Ignore node_modules directory
+node_modules/
+.wwebjs_auth/
+# Ignore build output directory
+dist/
+
+# Ignore environment variables file
+.env
+
+# Ignore log files
+*.log
+
+# Ignore test coverage reports
+coverage/
+
+# Ignore TypeScript build output
+*.js
+*.d.ts
+*.map
+*.key
