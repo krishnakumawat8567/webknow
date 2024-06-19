@@ -11,14 +11,19 @@ const { Client, Location, Poll,List, Buttons, LocalAuth,MessageMedia } =  requir
 //     }
 // });
 
-client = new Client({
-    authStrategy: new LocalAuth(),
-    puppeteer: {
-        headless: false,
-        args: [ '--no-sandbox', '--disable-gpu', ],
-    },
-    webVersionCache: { type: 'remote', remotePath: 'https://raw.githubusercontent.com/wppconnect-team/wa-version/main/html/2.2412.54.html', }
+const client = new Client({
+    puppeteer: { args: ["--no-sandbox", "--disable-dev-shm-usage"] },
+    authStrategy: new LocalAuth()
 });
+
+// client = new Client({
+//     authStrategy: new LocalAuth(),
+//     puppeteer: {
+//         headless: false,
+//         args: [ '--no-sandbox', '--disable-gpu', ],
+//     },
+//     webVersionCache: { type: 'remote', remotePath: 'https://raw.githubusercontent.com/wppconnect-team/wa-version/main/html/2.2412.54.html', }
+// });
 
 client.initialize();
 
